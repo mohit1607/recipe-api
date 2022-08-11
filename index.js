@@ -5,7 +5,7 @@ const app = express()
 const Recipe = require('./models/recipe')
 require('./db/conn')
 
-const port = 8080|| process.env.PORT;
+// const port = 8080|| process.env.PORT;
 
 //middlewares
 app.use(bodyParser.json({limit:'30mb', extended: true}))  // use to convert post request to req.body
@@ -44,12 +44,12 @@ app.get('/', async(req,res) => {
     try {
         const allRecipes = await Recipe.find({}).limit(100)
         res.status(200).send(allRecipes)
-         console.log('post request on /allrecipes')
+         console.log('post request on /')
     } catch (e) {
         console.error(e)
     }
 })
 
-app.listen(port, () =>{
+app.listen(process.env.PORT||8080, () =>{
     console.log(`connection established with the port ${port}`);
 })
