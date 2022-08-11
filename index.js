@@ -15,15 +15,15 @@ app.use(cors())
 
 
 //queries
-app.get('/', (req,res) => {
-   try{
-    console.log('get request on /')
-     res.send('hello hello moshi moshi')
-   }catch(e){
-    console.error(e)
-    res.status(400).send(e)
-   }
-})
+// app.get('/', (req,res) => {
+//    try{
+//     console.log('get request on /')
+//      res.send('hello hello moshi moshi')
+//    }catch(e){
+//     console.error(e)
+//     res.status(400).send(e)
+//    }
+// })
 
 app.post('/', async(req, res) => {
     try{
@@ -40,7 +40,7 @@ app.post('/', async(req, res) => {
     // for the range and pagination the range should be defined from where to where you want documents.
 })
 
-app.get('/allrecipes', async(req,res) => {
+app.get('/', async(req,res) => {
     try {
         const allRecipes = await Recipe.find({}).limit(100)
         res.status(200).send(allRecipes)
