@@ -50,6 +50,6 @@ app.get('/', async(req,res) => {
     }
 })
 
-app.listen(process.env.PORT||8080, () =>{
+app.listen(process.env.PORT, () =>{
     console.log(`connection established with the port ${port}`);
 })
