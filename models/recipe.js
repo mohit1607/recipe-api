@@ -6,10 +6,6 @@ const recipeSchema = mongoose.Schema({
         require: true,
         unique: true,
     },
-    userId: {
-        type: String,
-        require: true,
-    },
     createdBy: {
         type: String,
         require: true
