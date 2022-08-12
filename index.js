@@ -51,7 +51,6 @@ app.post('/', async(req, res) => {
 })
 
 
-const port = process.env.PORT||8080
-app.listen(port, () =>{
+app.listen(process.env.PORT||8080, () =>{
     console.log(`connection established with the port ${port}`);
 })
